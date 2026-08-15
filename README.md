@@ -19,4 +19,22 @@ python churn_tahmini.py
 ```
 
 ## Sonuc
-_(model karsilastirmasi ve yorum calisma bittikce buraya eklenecek)_
+
+Validation karsilastirmasi (f1-score):
+
+| Model | Accuracy | F1 |
+|---|---|---|
+| Logistic Regression | 0.750 | 0.571 |
+| KNN | 0.775 | 0.400 |
+| Decision Tree (bonus) | 0.708 | 0.507 |
+
+Logistic Regression secildi (`class_weight="balanced"` ile), test sonuclari:
+
+- Accuracy: 0.725
+- Precision: 0.432
+- Recall: 0.704
+- F1-score: 0.535
+
+Churn azinlik sinif oldugu icin (%22.7) class_weight kullanmadan model hep "kalir" derdi.
+Recall'un precision'dan yuksek cikmasi churn tahmininde tercih edilir sekilde bir sonuc -
+amac ayrilacak musteriyi kacirmamak.
